@@ -2,3 +2,5 @@ ksiazkaObiektowo.sln
 ksiazkaObiektowo.vcxproj
 ksiazkaobiektowo.vcxproj.*
 .vs/
+Debug/
+*.txt
