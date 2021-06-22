@@ -6,7 +6,10 @@ using namespace std;
 int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa;
-    std::cout << "Hello World!\n";
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+ 
     return 0;
 }
 
