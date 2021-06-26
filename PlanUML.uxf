@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>20</y>
+      <w>320</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>KsiazkaAdresowa
+--
+- idOstatniegoAdresata : Integer
+- idUsunietegoAdresata : Integer
+--
+KsiazkaAdresowa()
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>20</y>
+      <w>270</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Uzytkownik
+--
+- id : Integer
+- login : String
+- haslo : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>330</y>
+      <w>320</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>UzytkownikManager
+--
+- idZalogowanegoUzytkownika : Integer
+- uzytkownicy : vector&lt;Uzytkownik&gt; 
+--
++ rejestracjaUzytkownika() : void
++ logowanieUzytkownika() : Integer
++ podajDaneNowegoUzytkownika() : Uzytkownik
+- pobierzIdNowegoUzytkownika() : Integer
+- czyIstniejeLogin() : bool
+- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>260</y>
+      <w>320</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>PlikZUzytkownikami
+--
+- nazwaPlikuZUzytkownikami: String
+--
++ dopiszUzytkownikaDoPliku() : void
+- czyPlikJestPusty() : bool
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>20</y>
+      <w>270</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>MetodyPomocnicze
+--
+--
+konwerjsaIntNaString() : String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
