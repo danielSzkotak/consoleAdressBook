@@ -7,15 +7,13 @@
       <x>40</x>
       <y>20</y>
       <w>320</w>
-      <h>290</h>
+      <h>110</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
-- idOstatniegoAdresata : Integer
-- idUsunietegoAdresata : Integer
+- UzytkownikManager : uzytkownikManager
 --
-KsiazkaAdresowa()
-
++ rejestracjaUzytkownika();
 
 
 
@@ -41,8 +39,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
-      <y>330</y>
+      <x>40</x>
+      <y>160</y>
       <w>320</w>
       <h>250</h>
     </coordinates>
@@ -50,13 +48,14 @@ KsiazkaAdresowa()
 --
 - idZalogowanegoUzytkownika : Integer
 - uzytkownicy : vector&lt;Uzytkownik&gt; 
+- plikZUzytkownikami : PlikZUzytkownikami
 --
 + rejestracjaUzytkownika() : void
 + logowanieUzytkownika() : Integer
-+ podajDaneNowegoUzytkownika() : Uzytkownik
+- podajDaneNowegoUzytkownika() : Uzytkownik
 - pobierzIdNowegoUzytkownika() : Integer
 - czyIstniejeLogin() : bool
-- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : String
+
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -71,9 +70,12 @@ KsiazkaAdresowa()
     <panel_attributes>PlikZUzytkownikami
 --
 - nazwaPlikuZUzytkownikami: String
+- fstream : plikTekstowy
 --
++ PlikZUzytkownikami();
 + dopiszUzytkownikaDoPliku() : void
 - czyPlikJestPusty() : bool
+- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : String
 </panel_attributes>
     <additional_attributes/>
   </element>
