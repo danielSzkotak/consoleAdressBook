@@ -9,6 +9,17 @@ int UzytkownikManager::pobierzIdNowegoUzytkownika()
 }
 
 
+void UzytkownikManager::wypiszWszystkichUzytkownikow() {
+
+    for (int i = 0; i < uzytkownicy.size(); i++) {
+
+        cout << uzytkownicy[i].pobierzId() << endl;
+        cout << uzytkownicy[i].pobierzLogin() << endl;
+        cout << uzytkownicy[i].pobierzHaslo() << endl;
+    }
+
+}
+
 bool UzytkownikManager::czyIstniejeLogin(string login)
 {
 
@@ -59,4 +70,10 @@ Uzytkownik UzytkownikManager::podajDaneNowegoUzytkownika()
     uzytkownik.ustawHaslo(haslo);
 
     return uzytkownik;
+}
+
+void UzytkownikManager::wczytajUzytkownikowZPliku() {
+
+    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+
 }
