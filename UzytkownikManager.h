@@ -20,7 +20,9 @@ class UzytkownikManager
 
 public:
 
+	void wypiszWszystkichUzytkownikow();
 	void rejestracjaUzytkownika();
+	void wczytajUzytkownikowZPliku();
 	//int logowanieUzytkownika();
 	
 

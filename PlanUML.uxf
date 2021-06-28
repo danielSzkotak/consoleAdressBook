@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
+      <x>50</x>
       <y>20</y>
       <w>320</w>
       <h>110</h>
@@ -13,6 +13,7 @@
 --
 - UzytkownikManager : uzytkownikManager
 --
++ KsiazkaAdresowa();
 + rejestracjaUzytkownika();
 
 
@@ -24,7 +25,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
+      <x>390</x>
       <y>20</y>
       <w>270</w>
       <h>210</h>
@@ -39,7 +40,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
+      <x>50</x>
       <y>160</y>
       <w>320</w>
       <h>250</h>
@@ -52,6 +53,7 @@
 --
 + rejestracjaUzytkownika() : void
 + logowanieUzytkownika() : Integer
++ wczytajUzytkownikowZPliku() : void
 - podajDaneNowegoUzytkownika() : Uzytkownik
 - pobierzIdNowegoUzytkownika() : Integer
 - czyIstniejeLogin() : bool
@@ -62,7 +64,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
+      <x>390</x>
       <y>260</y>
       <w>320</w>
       <h>230</h>
@@ -74,6 +76,7 @@
 --
 + PlikZUzytkownikami();
 + dopiszUzytkownikaDoPliku() : void
++ wczytajUzytkownikowZPliku() : vector&lt;Uzytkownik&gt;
 - czyPlikJestPusty() : bool
 - zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : String
 </panel_attributes>
@@ -82,7 +85,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>680</x>
+      <x>690</x>
       <y>20</y>
       <w>270</w>
       <h>160</h>
