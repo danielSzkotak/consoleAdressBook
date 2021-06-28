@@ -7,12 +7,6 @@
 
 
 
-PlikZUzytkownikami::PlikZUzytkownikami() {
-
-    nazwaPlikuZUzytkownikami = "Uzytkownicy.txt";
-
-}
-
 bool PlikZUzytkownikami::czyPlikJestPusty()
 {
     plikTekstowy.seekg(0, ios::end);
@@ -61,6 +55,7 @@ string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowym
 vector<Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku() {
 
     Uzytkownik uzytkownik;
+    vector<Uzytkownik> uzytkownicy;
     string daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
 
     plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::in);
