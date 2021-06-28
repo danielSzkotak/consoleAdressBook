@@ -7,9 +7,14 @@ using namespace std;
 class KsiazkaAdresowa
 {
 	UzytkownikManager uzytkownikManager;
+	string nazwaPliku;
 
 public: 
-	KsiazkaAdresowa();
+	KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikManager(nazwaPlikuZUzytkownikami) {
+	
+		uzytkownikManager.wczytajUzytkownikowZPliku();
+	
+	};
 	void rejestracjaUzytkownika();
 	void wypiszWszystkichUzytkownikow();
 
