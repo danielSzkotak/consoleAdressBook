@@ -7,7 +7,6 @@ using namespace std;
 class KsiazkaAdresowa
 {
 	UzytkownikManager uzytkownikManager;
-	string nazwaPliku;
 
 public: 
 	KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikManager(nazwaPlikuZUzytkownikami) {

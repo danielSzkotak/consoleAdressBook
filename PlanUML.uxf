@@ -41,7 +41,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>50</x>
-      <y>160</y>
+      <y>150</y>
       <w>320</w>
       <h>250</h>
     </coordinates>
@@ -65,14 +65,13 @@
     <id>UMLClass</id>
     <coordinates>
       <x>390</x>
-      <y>260</y>
-      <w>320</w>
-      <h>230</h>
+      <y>250</y>
+      <w>570</w>
+      <h>220</h>
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 --
 - nazwaPlikuZUzytkownikami: String
-- fstream : plikTekstowy
 --
 + PlikZUzytkownikami();
 + dopiszUzytkownikaDoPliku() : void
