@@ -3,6 +3,12 @@
 #include <vector>
 #include "Uzytkownik.h"
 #include "PlikzUzytkownikami.h"
+#include "MetodyPomocnicze.h"
+#include <fstream>
+#include <cstdlib>
+#include <string>
+
+
 
 using namespace std;
 
@@ -17,13 +23,15 @@ class UzytkownikManager
 	bool czyIstniejeLogin(string login);
 	Uzytkownik podajDaneNowegoUzytkownika();
 	
+	
 
 public:
 	UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
 	void wypiszWszystkichUzytkownikow();
 	void rejestracjaUzytkownika();
 	void wczytajUzytkownikowZPliku();
-	//int logowanieUzytkownika();
+	int logowanieUzytkownika();
+	void pobierzIdZalogowanegoUzytkownika();
 	
 
 };

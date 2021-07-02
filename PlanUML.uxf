@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>50</x>
-      <y>20</y>
-      <w>320</w>
-      <h>110</h>
+      <x>117</x>
+      <y>45</y>
+      <w>288</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
 - UzytkownikManager : uzytkownikManager
 --
-+ KsiazkaAdresowa();
-+ rejestracjaUzytkownika();
++ KsiazkaAdresowa()
++ rejestracjaUzytkownika(): void
++ logowanieUzytkownika(): void
++ wypiszWszystkichUzytkownikow(): void
 
 
 
@@ -25,10 +27,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>390</x>
-      <y>20</y>
-      <w>270</w>
-      <h>210</h>
+      <x>423</x>
+      <y>45</y>
+      <w>243</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>Uzytkownik
 --
@@ -40,10 +42,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>50</x>
-      <y>150</y>
-      <w>320</w>
-      <h>250</h>
+      <x>117</x>
+      <y>189</y>
+      <w>288</w>
+      <h>351</h>
     </coordinates>
     <panel_attributes>UzytkownikManager
 --
@@ -52,11 +54,15 @@
 - plikZUzytkownikami : PlikZUzytkownikami
 --
 + rejestracjaUzytkownika() : void
-+ logowanieUzytkownika() : Integer
 + wczytajUzytkownikowZPliku() : void
++ logowanieUzytkownika() : Integer
++ zmianaHaslaZalogowanegoUzytkownika() : void
++ wylogowanieUzytkownika() : void
++ pobierzIdZalogowanegoUzytkownika(): void
 - podajDaneNowegoUzytkownika() : Uzytkownik
 - pobierzIdNowegoUzytkownika() : Integer
 - czyIstniejeLogin() : bool
+
 
 </panel_attributes>
     <additional_attributes/>
@@ -64,10 +70,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>390</x>
-      <y>250</y>
-      <w>570</w>
-      <h>220</h>
+      <x>450</x>
+      <y>333</y>
+      <w>513</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 --
@@ -84,16 +90,116 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>690</x>
-      <y>20</y>
-      <w>270</w>
-      <h>160</h>
+      <x>684</x>
+      <y>45</y>
+      <w>243</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>MetodyPomocnicze
 --
 --
-konwerjsaIntNaString() : String
++ konwerjsaIntNaString() : String
++ wczytajLinie() : String
 </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>126</x>
+      <y>639</y>
+      <w>297</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Adresat
+--
+- id : Integer
+- idUzytkownika : Integer
+- imie : String
+- nazwisko : String
+- numertelefonu : String
+- email : String
+- adres : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>639</y>
+      <w>378</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>AdresatManager
+--
+- adresaci: vector&lt;Adresat&gt;
+- plikZAdresatami: PlikZAdresatami
+--
++ podajDaneNowegoAdresata() : Adresat
+- dodajAdresata() : Integer
+- pobierzDaneAdresata() : Adresat
+- wczytajAdresatowZalogowanegoUzytkownikaZPliku() : Integer
+- wyswietlWszystkichAdresatow() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>864</x>
+      <y>639</y>
+      <w>378</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>PlikZAdresatami
+--
+- nazwaPlikuZAdresatami: String
+--
++ PlikZAdresatami
++ void dopiszAdresataDoPliku() : void
+- zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>126</x>
+      <y>432</y>
+      <w>270</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>TODO
+--
+zmianaHasla()
+wylogowanie()
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>126</x>
+      <y>567</y>
+      <w>1134</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>TODO
+--
+Below...
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>441</x>
+      <y>153</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>TODO
+-
+Dodac gettery i settery
+bg=blue</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
