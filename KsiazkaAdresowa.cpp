@@ -16,7 +16,19 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
 
 void KsiazkaAdresowa::logowanieUzytkownika() {
 
-	uzytkownikManager.pobierzIdZalogowanegoUzytkownika();
+	uzytkownikManager.ustawIdZalogowanegoUzytkownika();
+
+}
+
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
+
+	uzytkownikManager.zmianaHaslaZalogowanegoUzytkownika();
+
+}
+
+void KsiazkaAdresowa::wylogowanieUzytkownika() {
+
+	uzytkownikManager.wylogowanieUzytkownika();
 
 }
 
