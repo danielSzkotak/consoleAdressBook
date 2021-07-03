@@ -20,6 +20,7 @@ class PlikZUzytkownikami
 public:
 	PlikZUzytkownikami(string NAZWA_PLIKU_Z_UZYTKOWNIKAMI) : nazwaPlikuZUzytkownikami(NAZWA_PLIKU_Z_UZYTKOWNIKAMI) {};
 	void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
+	void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>& uzytkownicy);
 	vector<Uzytkownik> wczytajUzytkownikowZPliku();
 
 

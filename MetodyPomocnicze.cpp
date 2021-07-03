@@ -18,6 +18,7 @@ string MetodyPomocnicze::konwerjsaIntNaString(int liczba)
 string MetodyPomocnicze::wczytajLinie()
 {
     cin.ignore();
+    cin.clear();
     string wejscie = "";
     cin >> wejscie;
     return wejscie;
