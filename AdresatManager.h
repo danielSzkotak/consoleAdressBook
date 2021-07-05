@@ -16,13 +16,15 @@ class AdresatManager
 	int idOstatniegoAdresata;
 	vector <Adresat> adresaci;
 	PlikZAdresatami plikZAdresatami;
+	
 
 public:
 	
 	AdresatManager();
 	void dodajAdresata(int idZalogowanegoUzytkownika);
 	Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
-
-
+	void wyswietlWszystkichAdresatow();
+	void wyswietlDaneAdresata(Adresat adresat);
+	
 };
 
