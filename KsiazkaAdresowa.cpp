@@ -38,7 +38,11 @@ void KsiazkaAdresowa::dodajAdresata() {
 
 }
 
+void KsiazkaAdresowa::wyswietlAdresatow() {
 
+	adresatManager.wyswietlWszystkichAdresatow();
+
+}
 
 
 
