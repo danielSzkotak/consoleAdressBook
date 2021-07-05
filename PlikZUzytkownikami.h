@@ -24,6 +24,5 @@ public:
 	vector<Uzytkownik> wczytajUzytkownikowZPliku();
 
 
-
 };
 
