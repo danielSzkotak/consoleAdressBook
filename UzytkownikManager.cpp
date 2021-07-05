@@ -3,6 +3,12 @@
 #include "PlikZUzytkownikami.h"
 
 
+//UzytkownikManager::UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
+//
+//    idZalogowanegoUzytkownika = 0;
+//
+//}
+
 int UzytkownikManager::pobierzIdNowegoUzytkownika()
 {
     if (uzytkownicy.empty() == true)
@@ -81,11 +87,6 @@ void UzytkownikManager::wczytajUzytkownikowZPliku() {
 
 }
 
-void UzytkownikManager::ustawIdZalogowanegoUzytkownika() {
-
-    idZalogowanegoUzytkownika = logowanieUzytkownika();
-
-}
 
 int UzytkownikManager::pobierzIdZalogowanegoUzytkownika() {
 
@@ -98,7 +99,6 @@ int UzytkownikManager::logowanieUzytkownika() {
     string login = "", haslo = "";
 
     cout << endl << "Podaj login: ";
-    //login = MetodyPomocnicze::wczytajLinie();
     cin >> login;
 
     for (int i = 0; i < uzytkownicy.size(); i++) {
@@ -114,7 +114,7 @@ int UzytkownikManager::logowanieUzytkownika() {
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return uzytkownicy[i].pobierzId();
+                    return idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -149,7 +149,6 @@ void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika() {
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 
 }
-
 
 void UzytkownikManager::wylogowanieUzytkownika() {
 
