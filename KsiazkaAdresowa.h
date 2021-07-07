@@ -1,4 +1,6 @@
-#pragma once
+#ifndef KSIAZKAADRESOWA_H
+#define KSIAZKAADRESOWA_H
+
 #include <iostream>
 #include "UzytkownikManager.h"
 #include "AdresatManager.h"
@@ -12,11 +14,12 @@ class KsiazkaAdresowa
 	AdresatManager adresatManager;
 
 public:
-	KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikManager(nazwaPlikuZUzytkownikami) {
-
+	KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) :
+		uzytkownikManager(nazwaPlikuZUzytkownikami),
+		adresatManager(nazwaPlikuZAdresatami)
+	{
 		uzytkownikManager.wczytajUzytkownikowZPliku();
-		
-	};
+	}
 
 	void rejestracjaUzytkownika();
 	void wypiszWszystkichUzytkownikow();
@@ -24,6 +27,9 @@ public:
 	void zmianaHaslaZalogowanegoUzytkownika();
 	void wylogowanieUzytkownika();
 	void dodajAdresata();
-	void wyswietlAdresatow();
+	void wyswietlWszystkichAdresatow();
+	void wczytajAdresatowZPliku();
 
 };
+
+#endif // KSIAZKAADRESOWA_H

@@ -1,24 +1,25 @@
-﻿#include <iostream>
+#include <iostream>
 #include "KsiazkaAdresowa.h"
 
 using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
 
-    
-
+   // ksiazkaAdresowa.rejestracjaUzytkownika();
     ksiazkaAdresowa.logowanieUzytkownika();
+    ksiazkaAdresowa.wczytajAdresatowZPliku();
+    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
     ksiazkaAdresowa.dodajAdresata();
-    ksiazkaAdresowa.wyswietlAdresatow();
-    ksiazkaAdresowa.wylogowanieUzytkownika();
-    //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+    ksiazkaAdresowa.dodajAdresata();
+    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
     //ksiazkaAdresowa.wylogowanieUzytkownika();
     //ksiazkaAdresowa.logowanieUzytkownika();
+   // ksiazkaAdresowa.wczytajAdresatowZPliku();
+   // ksiazkaAdresowa.dodajAdresata();
+   // ksiazkaAdresowa.wyswietlWszystkichAdresatow();
 
-    //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
 
     return 0;
 }
-
