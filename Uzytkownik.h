@@ -1,4 +1,6 @@
-#pragma once
+#ifndef UZYTKOWNIK_H
+#define UZYTKOWNIK_H
+
 #include <iostream>
 
 using namespace std;
@@ -7,7 +9,7 @@ class Uzytkownik
 {
 
 	int id;
-	string login; 
+	string login;
 	string haslo;
 
 public:
@@ -20,3 +22,4 @@ public:
 	string pobierzHaslo();
 };
 
+#endif // UZYTKOWNIK_H

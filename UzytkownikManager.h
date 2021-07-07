@@ -1,4 +1,6 @@
-#pragma once
+#ifndef UZYTKOWNIKMANAGER_H
+#define UZYTKOWNIKMANAGER_H
+
 #include <iostream>
 #include <vector>
 #include "Uzytkownik.h"
@@ -22,15 +24,12 @@ class UzytkownikManager
 	int pobierzIdNowegoUzytkownika();
 	bool czyIstniejeLogin(string login);
 	Uzytkownik podajDaneNowegoUzytkownika();
-	
+
 
 public:
-	
-	UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
-	
-		idZalogowanegoUzytkownika = 0;
-	
-	};
+
+	UzytkownikManager(string nazwaPlikuZUzytkownikami); //: PlikZUzytkownikami(nazwaPlikuZUzytkownikami) {}
+
 
 	void wypiszWszystkichUzytkownikow();
 	void rejestracjaUzytkownika();
@@ -42,3 +41,5 @@ public:
 
 };
 
+
+#endif // UZYTKOWNIKMANAGER_H

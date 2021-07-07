@@ -8,7 +8,7 @@
 
 bool PlikZUzytkownikami::czyPlikJestPusty(fstream &plikTekstowy)
 {
-    
+
     plikTekstowy.seekg(0, ios::end);
     if (plikTekstowy.tellg() == 0)
         return true;
@@ -45,7 +45,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)
 {
     string liniaZDanymiUzytkownika = "";
-   
+
 
     liniaZDanymiUzytkownika += MetodyPomocnicze::konwerjsaIntNaString(uzytkownik.pobierzId()) + '|';
     liniaZDanymiUzytkownika += uzytkownik.pobierzLogin() + '|';

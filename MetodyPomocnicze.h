@@ -1,4 +1,6 @@
-#pragma once
+#ifndef METODYPOMOCNICZE_H
+#define METODYPOMOCNICZE_H
+
 #include <iostream>
 #include "Uzytkownik.h"
 #include <string>
@@ -11,6 +13,10 @@ public:
 
 	static string konwerjsaIntNaString(int liczba);
     static string wczytajLinie();
+	static int konwersjaStringNaInt(string liczba);
+    static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 
 };
 
+
+#endif // METODYPOMOCNICZE_H

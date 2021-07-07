@@ -1,10 +1,11 @@
-#pragma once
 #include "MetodyPomocnicze.h"
 #include <windows.h>
 #include <fstream>
 #include <sstream>
 #include <string>
 #include <iostream>
+#include <cstdlib>
+#include <algorithm>
 
 
 string MetodyPomocnicze::konwerjsaIntNaString(int liczba)
@@ -22,5 +23,24 @@ string MetodyPomocnicze::wczytajLinie()
     string wejscie = "";
     cin >> wejscie;
     return wejscie;
-    
+
+}
+
+int MetodyPomocnicze::konwersjaStringNaInt(string liczba)
+{
+    int liczbaInt;
+    istringstream iss(liczba);
+    iss >> liczbaInt;
+
+    return liczbaInt;
+}
+
+string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
+{
+    if (!tekst.empty())
+    {
+        transform(tekst.begin(), tekst.end(), tekst.begin(), ::tolower);
+        tekst[0] = toupper(tekst[0]);
+    }
+    return tekst;
 }

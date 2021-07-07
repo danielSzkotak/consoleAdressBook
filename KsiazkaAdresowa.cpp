@@ -1,5 +1,6 @@
 #include "KsiazkaAdresowa.h"
 #include "PlikZUzytkownikami.h"
+#include "PlikZAdresatami.h"
 
 
 void KsiazkaAdresowa::rejestracjaUzytkownika() {
@@ -38,12 +39,14 @@ void KsiazkaAdresowa::dodajAdresata() {
 
 }
 
-void KsiazkaAdresowa::wyswietlAdresatow() {
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
 
 	adresatManager.wyswietlWszystkichAdresatow();
 
 }
 
-
-
+void KsiazkaAdresowa::wczytajAdresatowZPliku()
+{
+	adresatManager.wczytajAdresatowZPliku(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+}
 

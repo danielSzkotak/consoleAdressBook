@@ -1,4 +1,6 @@
-#pragma once
+#ifndef ADRESAT_H
+#define ADRESAT_H
+
 #include <iostream>
 
 using namespace std;
@@ -31,3 +33,5 @@ public:
 	string pobierzEmail();
 	string pobierzAdres();
 };
+
+#endif // ADRESAT_H

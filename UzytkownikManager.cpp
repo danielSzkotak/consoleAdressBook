@@ -1,13 +1,12 @@
-#pragma once
 #include "UzytkownikManager.h"
 #include "PlikZUzytkownikami.h"
 
 
-//UzytkownikManager::UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
-//
-//    idZalogowanegoUzytkownika = 0;
-//
-//}
+UzytkownikManager::UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
+
+    idZalogowanegoUzytkownika = 0;
+
+}
 
 int UzytkownikManager::pobierzIdNowegoUzytkownika()
 {
@@ -50,8 +49,8 @@ void UzytkownikManager::rejestracjaUzytkownika()
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
 
     uzytkownicy.push_back(uzytkownik);
-    
-    plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik); 
+
+    plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
 
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
     system("pause");

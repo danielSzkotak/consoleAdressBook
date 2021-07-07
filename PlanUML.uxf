@@ -12,11 +12,17 @@
     <panel_attributes>KsiazkaAdresowa
 --
 - UzytkownikManager : uzytkownikManager
+- AdresatManager : adresatManager
 --
 + KsiazkaAdresowa()
 + rejestracjaUzytkownika(): void
 + logowanieUzytkownika(): void
 + wypiszWszystkichUzytkownikow(): void
++ zmianaHaslaZalogowanegoUzytkownika(): void
++ wylogowanieUzytkownika(): void
++ dodajAdresata(): void
++ wyswietlWszystkichAdresatow(): void
++ wczytajAdresatowZPliku(): void
 
 
 
@@ -80,12 +86,13 @@
 --
 - nazwaPlikuZUzytkownikami: String
 --
+- czyPlikJestPusty() : bool
+- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : String
 + PlikZUzytkownikami();
 + dopiszUzytkownikaDoPliku() : void
 + wczytajUzytkownikowZPliku() : vector&lt;Uzytkownik&gt;
 + zapiszWszystkichUzytkownikowDoPliku() : void
-- czyPlikJestPusty() : bool
-- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : String
+
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -102,6 +109,8 @@
 --
 + konwerjsaIntNaString() : String
 + wczytajLinie() : String
++ konwersjaStringNaInt(string liczba): Integer
++ zamienPierwszaLitereNaDuzaAPozostaleNaMale(): String
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -138,11 +147,11 @@
 - adresaci: vector&lt;Adresat&gt;
 - plikZAdresatami: PlikZAdresatami
 --
-+ podajDaneNowegoAdresata() : Adresat
-- dodajAdresata() : Integer
-- pobierzDaneAdresata() : Adresat
-- wczytajAdresatowZalogowanegoUzytkownikaZPliku() : Integer
-- wyswietlWszystkichAdresatow() : void</panel_attributes>
++ dodajAdresata(): void;
++ podajDaneNowegoAdresata(): Adresat;
++ wyswietlWszystkichAdresatow();
++ wyswietlDaneAdresata();
++ wczytajAdresatowZPliku();</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -151,15 +160,23 @@
       <x>864</x>
       <y>639</y>
       <w>378</w>
-      <h>198</h>
+      <h>270</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
 - nazwaPlikuZAdresatami: String
+- idOstatniegoAdresata: Integer
 --
+- czyPlikJestPusty(): Bool
+- zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(): String
 + PlikZAdresatami
 + void dopiszAdresataDoPliku() : void
-- zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(): String</panel_attributes>
++ wczytajAdresatowZalogowanegoUzytkownikaZPliku(): vector&lt;Adresat&gt;
++ pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami();: Integer
++ pobierzDaneAdresata(): Adresat
++ pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(): Integer
++ pobierzLiczbe(): String
++ pobierzIDAdresata(): Integer</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
