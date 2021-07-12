@@ -28,7 +28,7 @@ class UzytkownikManager
 
 public:
 
-	UzytkownikManager(string nazwaPlikuZUzytkownikami); //: PlikZUzytkownikami(nazwaPlikuZUzytkownikami) {}
+	UzytkownikManager(string nazwaPlikuZUzytkownikami); 
 
 
 	void wypiszWszystkichUzytkownikow();

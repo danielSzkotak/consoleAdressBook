@@ -168,6 +168,10 @@ int PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(strin
 string PlikZAdresatami::pobierzLiczbe(string tekst, int pozycjaZnaku)
 {
     string liczba = "";
-    liczba = tekst[pozycjaZnaku];
+    while (isdigit(tekst[pozycjaZnaku]))
+    {
+        liczba += tekst[pozycjaZnaku];
+        pozycjaZnaku++;
+    }
     return liczba;
 }

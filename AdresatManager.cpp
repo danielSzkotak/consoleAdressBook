@@ -17,8 +17,6 @@ void AdresatManager::dodajAdresata(int idZalogowanegoUzytkownika) {
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
-    //++idOstatniegoAdresata;
-
 }
 
 Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
@@ -63,7 +61,7 @@ void AdresatManager::wyswietlWszystkichAdresatow(){
     }
     else
     {
-        cout << endl << "Ksiazka adresowa jest pusta dupa." << endl << endl;
+        cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
     }
     system("pause");
 }

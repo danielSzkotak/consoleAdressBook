@@ -59,13 +59,12 @@ void UzytkownikManager::rejestracjaUzytkownika()
 Uzytkownik UzytkownikManager::podajDaneNowegoUzytkownika()
 {
     Uzytkownik uzytkownik;
-
     uzytkownik.ustawId(pobierzIdNowegoUzytkownika());
-
     string login;
+    cout << " >>> REJESTRACJA <<<" << endl << endl;
     do
     {
-        cout << endl << "Podaj login: ";
+        cout << "Podaj login: ";
         cin >> login;
         uzytkownik.ustawLogin(login);
 
@@ -97,7 +96,8 @@ int UzytkownikManager::logowanieUzytkownika() {
 
     string login = "", haslo = "";
 
-    cout << endl << "Podaj login: ";
+    cout << " >>> LOGOWANIE <<<" << endl << endl;
+    cout << "Podaj login: ";
     cin >> login;
 
     for (int i = 0; i < uzytkownicy.size(); i++) {
@@ -132,6 +132,7 @@ int UzytkownikManager::logowanieUzytkownika() {
 void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika() {
 
     string noweHaslo = "";
+    cout << " >>> ZMIANA HASLA <<<" << endl << endl;
     cout << "Podaj nowe haslo: ";
     noweHaslo = MetodyPomocnicze::wczytajLinie();
 
