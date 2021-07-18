@@ -2,12 +2,6 @@
 #include "PlikZUzytkownikami.h"
 
 
-UzytkownikManager::UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
-
-    idZalogowanegoUzytkownika = 0;
-
-}
-
 int UzytkownikManager::pobierzIdNowegoUzytkownika()
 {
     if (uzytkownicy.empty() == true)
@@ -61,7 +55,7 @@ Uzytkownik UzytkownikManager::podajDaneNowegoUzytkownika()
     Uzytkownik uzytkownik;
     uzytkownik.ustawId(pobierzIdNowegoUzytkownika());
     string login;
-    cout << " >>> REJESTRACJA <<<" << endl << endl;
+   
     do
     {
         cout << "Podaj login: ";
@@ -79,11 +73,6 @@ Uzytkownik UzytkownikManager::podajDaneNowegoUzytkownika()
     return uzytkownik;
 }
 
-void UzytkownikManager::wczytajUzytkownikowZPliku() {
-
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-
-}
 
 
 int UzytkownikManager::pobierzIdZalogowanegoUzytkownika() {
@@ -96,7 +85,6 @@ int UzytkownikManager::logowanieUzytkownika() {
 
     string login = "", haslo = "";
 
-    cout << " >>> LOGOWANIE <<<" << endl << endl;
     cout << "Podaj login: ";
     cin >> login;
 
@@ -107,7 +95,8 @@ int UzytkownikManager::logowanieUzytkownika() {
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
-                haslo = MetodyPomocnicze::wczytajLinie();
+                //haslo = MetodyPomocnicze::wczytajLinie();
+                cin >> haslo;
 
                 if (uzytkownicy[i].pobierzHaslo() == haslo)
                 {
@@ -129,12 +118,20 @@ int UzytkownikManager::logowanieUzytkownika() {
 
 }
 
+bool UzytkownikManager::czyUzytkownikJestZalogowany() {
+
+    if (idZalogowanegoUzytkownika != 0)
+        return true;
+    else
+        return false;
+}
+
 void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika() {
 
     string noweHaslo = "";
     cout << " >>> ZMIANA HASLA <<<" << endl << endl;
     cout << "Podaj nowe haslo: ";
-    noweHaslo = MetodyPomocnicze::wczytajLinie();
+    cin >> noweHaslo;
 
     for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
     {

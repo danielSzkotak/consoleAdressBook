@@ -14,20 +14,23 @@ using namespace std;
 class PlikZAdresatami
 {
 	const string nazwaPlikuZAdresatami;
-	bool czyPlikJestPusty(fstream& plikTekstowy);
-	string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
 	int idOstatniegoAdresata;
 
+	bool czyPlikJestPusty(fstream& plikTekstowy);
+	string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
+	string pobierzLiczbe(string tekst, int pozycjaZnaku);
+	Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
+	int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+	int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 
 public:
-	PlikZAdresatami(string NAZWA_PLIKU_Z_ADRESATAMI) : nazwaPlikuZAdresatami(NAZWA_PLIKU_Z_ADRESATAMI) {};
-	void dopiszAdresataDoPliku(Adresat adresat);
+	PlikZAdresatami(string NAZWA_PLIKU_Z_ADRESATAMI) : nazwaPlikuZAdresatami(NAZWA_PLIKU_Z_ADRESATAMI) {
+		idOstatniegoAdresata = 0;
+	};
+
+	bool dopiszAdresataDoPliku(Adresat adresat);
 	vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
-	int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
-	Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
-	int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
-	string pobierzLiczbe(string tekst, int pozycjaZnaku);
-	int pobierzIDAdresata();
+	int pobierzIdOstatniegoAdresata();
 };
 
 
