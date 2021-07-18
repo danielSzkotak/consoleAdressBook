@@ -5,16 +5,18 @@
     <id>UMLClass</id>
     <coordinates>
       <x>99</x>
-      <y>72</y>
+      <y>27</y>
       <w>288</w>
-      <h>126</h>
+      <h>216</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
+- const NAZWA_PLIKU_Z_ADRESATAMI: Integer
 - UzytkownikManager : uzytkownikManager
 - AdresatManager : adresatManager
 --
 + KsiazkaAdresowa()
++ ~KsiazkaAdresowa()
 + rejestracjaUzytkownika(): void
 + logowanieUzytkownika(): void
 + wypiszWszystkichUzytkownikow(): void
@@ -23,6 +25,7 @@
 + dodajAdresata(): void
 + wyswietlWszystkichAdresatow(): void
 + wczytajAdresatowZPliku(): void
++ czyUzytkownikJestZalogowany(): bool
 
 
 
@@ -59,6 +62,9 @@
 - uzytkownicy : vector&lt;Uzytkownik&gt; 
 - plikZUzytkownikami : PlikZUzytkownikami
 --
+- podajDaneNowegoUzytkownika() : Uzytkownik
+- pobierzIdNowegoUzytkownika() : Integer
+- czyIstniejeLogin() : bool
 + rejestracjaUzytkownika() : void
 + wczytajUzytkownikowZPliku() : void
 + logowanieUzytkownika() : Integer
@@ -66,9 +72,6 @@
 + wylogowanieUzytkownika() : void
 + pobierzIdZalogowanegoUzytkownika(): void
 + zmianaHaslaZalogowanegoUzytkownika(): void
-- podajDaneNowegoUzytkownika() : Uzytkownik
-- pobierzIdNowegoUzytkownika() : Integer
-- czyIstniejeLogin() : bool
 
 
 </panel_attributes>
@@ -84,10 +87,11 @@
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 --
-- nazwaPlikuZUzytkownikami: String
+- const NAZWA_PLIKU_Z_UZYTKOWNIKAMI: String
 --
 - czyPlikJestPusty() : bool
 - zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : String
+- pobierzDaneUzytkownika(): Uzytkownik 
 + PlikZUzytkownikami();
 + dopiszUzytkownikaDoPliku() : void
 + wczytajUzytkownikowZPliku() : vector&lt;Uzytkownik&gt;
@@ -111,7 +115,7 @@
 + wczytajLinie() : String
 + konwersjaStringNaInt(string liczba): Integer
 + zamienPierwszaLitereNaDuzaAPozostaleNaMale(): String
-</panel_attributes>
++ wczytajZnak(): Char</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -143,14 +147,14 @@
     </coordinates>
     <panel_attributes>AdresatManager
 --
-- idOstatniegoAdresata
+- const ID_ZALOGOWANEGO_UZYTKOWNIKA: Integer
 - adresaci: vector&lt;Adresat&gt;
 - plikZAdresatami: PlikZAdresatami
+- podajDaneNowegoAdresata(): Adresat;
+- wyswietlDaneAdresata();
 --
 + dodajAdresata(): void;
-+ podajDaneNowegoAdresata(): Adresat;
 + wyswietlWszystkichAdresatow();
-+ wyswietlDaneAdresata();
 + wczytajAdresatowZPliku();</panel_attributes>
     <additional_attributes/>
   </element>
@@ -169,14 +173,14 @@
 --
 - czyPlikJestPusty(): Bool
 - zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(): String
-+ PlikZAdresatami
+- pobierzLiczbe(): String
+- pobierzDaneAdresata(): Adresat
+- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(): Integer
+- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(): Integer
++ PlikZAdresatami()
 + void dopiszAdresataDoPliku() : void
 + wczytajAdresatowZalogowanegoUzytkownikaZPliku(): vector&lt;Adresat&gt;
-+ pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami();: Integer
-+ pobierzDaneAdresata(): Adresat
-+ pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(): Integer
-+ pobierzLiczbe(): String
-+ pobierzIDAdresata(): Integer</panel_attributes>
++ pobierzIdOstatniegoAdresata(): Integer</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

@@ -28,7 +28,6 @@ class UzytkownikManager
 
 public:
 
-	//UzytkownikManager(string nazwaPlikuZUzytkownikami);
     UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
 
 		idZalogowanegoUzytkownika = 0;
