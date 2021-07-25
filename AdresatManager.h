@@ -15,6 +15,8 @@ class AdresatManager
 	PlikZAdresatami plikZAdresatami;
 	Adresat podajDaneNowegoAdresata();
 	void wyswietlDaneAdresata(Adresat adresat);
+	int podajIdWybranegoAdresata();
+	char wybierzOpcjeZMenuEdycja();
 
 public:
 
@@ -29,6 +31,8 @@ public:
 	void dodajAdresata();
 	void wyswietlWszystkichAdresatow();
 	void wczytajAdresatowZPliku();
+	void usunAdresata();
+	void edytujAdresata();
 
 };
 

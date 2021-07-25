@@ -35,6 +35,8 @@ public:
 	void wyswietlWszystkichAdresatow();
 	void wczytajAdresatowZPliku();
 	bool czyUzytkownikJestZalogowany();
+	void usunAdresata();
+	void edytujAdresata();
 
 };
 

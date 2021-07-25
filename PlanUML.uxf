@@ -7,13 +7,13 @@
       <x>99</x>
       <y>27</y>
       <w>288</w>
-      <h>216</h>
+      <h>261</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
 - const NAZWA_PLIKU_Z_ADRESATAMI: Integer
 - UzytkownikManager : uzytkownikManager
-- AdresatManager : adresatManager
+- AdresatManager : *adresatManager
 --
 + KsiazkaAdresowa()
 + ~KsiazkaAdresowa()
@@ -26,6 +26,8 @@
 + wyswietlWszystkichAdresatow(): void
 + wczytajAdresatowZPliku(): void
 + czyUzytkownikJestZalogowany(): bool
++ usunAdresata(): void
++ edytujAdresata(): void
 
 
 
@@ -37,7 +39,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>99</x>
-      <y>270</y>
+      <y>306</y>
       <w>243</w>
       <h>189</h>
     </coordinates>
@@ -52,7 +54,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>360</x>
-      <y>270</y>
+      <y>306</y>
       <w>288</w>
       <h>351</h>
     </coordinates>
@@ -80,8 +82,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>657</x>
-      <y>270</y>
+      <x>666</x>
+      <y>306</y>
       <w>513</w>
       <h>198</h>
     </coordinates>
@@ -115,7 +117,8 @@
 + wczytajLinie() : String
 + konwersjaStringNaInt(string liczba): Integer
 + zamienPierwszaLitereNaDuzaAPozostaleNaMale(): String
-+ wczytajZnak(): Char</panel_attributes>
++ wczytajZnak(): Char
++ wczytajLiczbeCalkowita(): Integer</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -134,7 +137,8 @@
 - nazwisko : String
 - numertelefonu : String
 - email : String
-- adres : String</panel_attributes>
+- adres : String
++ Adresat()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -143,7 +147,7 @@
       <x>396</x>
       <y>666</y>
       <w>378</w>
-      <h>198</h>
+      <h>225</h>
     </coordinates>
     <panel_attributes>AdresatManager
 --
@@ -151,11 +155,15 @@
 - adresaci: vector&lt;Adresat&gt;
 - plikZAdresatami: PlikZAdresatami
 - podajDaneNowegoAdresata(): Adresat;
-- wyswietlDaneAdresata();
+- wyswietlDaneAdresata(): void
+- podajIdWybranegoAdresata(): Integer
+- wybierzOpcjeZMenuEdycja(): Char
 --
 + dodajAdresata(): void;
-+ wyswietlWszystkichAdresatow();
-+ wczytajAdresatowZPliku();</panel_attributes>
++ wyswietlWszystkichAdresatow(): void
++ wczytajAdresatowZPliku(): void
++ usunAdresata(): void
++ edytujAdresata(): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -168,7 +176,8 @@
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
-- nazwaPlikuZAdresatami: String
+- const nazwaPlikuZAdresatami: String
+- const nazwaTymczasowegoPlikuTekstowego: String 
 - idOstatniegoAdresata: Integer
 --
 - czyPlikJestPusty(): Bool
@@ -180,7 +189,9 @@
 + PlikZAdresatami()
 + void dopiszAdresataDoPliku() : void
 + wczytajAdresatowZalogowanegoUzytkownikaZPliku(): vector&lt;Adresat&gt;
-+ pobierzIdOstatniegoAdresata(): Integer</panel_attributes>
++ pobierzIdOstatniegoAdresata(): Integer
++ usunAdresataZPliku(): bool
++ edytujAdresataWPliku(): bool</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

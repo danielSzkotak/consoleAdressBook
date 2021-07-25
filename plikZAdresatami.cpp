@@ -58,6 +58,8 @@ bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat){
         {
             plikTekstowy << endl << liniaZDanymiAdresata;
         }
+
+ 
         idOstatniegoAdresata++;
         plikTekstowy.close();
         return true;
@@ -172,4 +174,137 @@ string PlikZAdresatami::pobierzLiczbe(string tekst, int pozycjaZnaku)
         pozycjaZnaku++;
     }
     return liczba;
+}
+
+
+bool PlikZAdresatami::usunAdresataZPliku(int idUsuwanegoAdresata) {
+
+    fstream plikTekstowy, tymczasowyPlikTekstowy;
+    const char* nazwaTymczasowegoPlikuTekstowego_ = nazwaTymczasowegoPlikuTekstowego.c_str();
+    string pojedynczaLiniaWPliku="";
+
+    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
+
+    if (plikTekstowy.good() == true)
+    {
+        tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuTekstowego, ios::out);
+
+        while (getline(plikTekstowy, pojedynczaLiniaWPliku)) {
+
+            stringstream ss(pojedynczaLiniaWPliku);
+            string IdAdresataWydzieloneZLinii;
+            getline(ss, IdAdresataWydzieloneZLinii, '|');
+
+            if (tymczasowyPlikTekstowy.good() == true) {
+
+                    if (IdAdresataWydzieloneZLinii == to_string(idUsuwanegoAdresata)) {
+                        // Do nothing
+                    }
+                    else {
+
+                        if (!czyPlikJestPusty(tymczasowyPlikTekstowy) == true) {
+
+                            tymczasowyPlikTekstowy << endl;
+                        }
+
+                        tymczasowyPlikTekstowy << pojedynczaLiniaWPliku;
+                    }
+            }
+
+        }
+    }
+    tymczasowyPlikTekstowy.close();
+    plikTekstowy.close();
+
+    if ((remove(nazwaPlikuZAdresatami.c_str()) != 0)) {
+            perror("Blad usuwania bazy danych");
+            return false;
+
+    } else 
+
+    if (rename(nazwaTymczasowegoPlikuTekstowego_, nazwaPlikuZAdresatami.c_str()) != 0) {
+            perror("Blad zmiany nazwy pliku bazy danych");
+            return false;
+    }
+
+    else {
+        return true;
+    }
+
+
+}
+
+bool PlikZAdresatami::edytujDaneAdresataWPliku(int idEdytowanegoAdresata, Adresat& adresat, int idZalogowanegoUzytkownika) {
+
+    fstream plikTekstowy, tymczasowyPlikTekstowy;
+    string nazwaTymczasowegoPlikuTekstowego = "Adresaci_temp.txt";
+    const char* nazwaTymczasowegoPlikuTekstowego_ = nazwaTymczasowegoPlikuTekstowego.c_str();
+    string pojedynczaLiniaWPliku = "";
+
+    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
+
+    if (plikTekstowy.good() == true) {
+
+        tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuTekstowego, ios::out);
+
+        while (getline(plikTekstowy, pojedynczaLiniaWPliku)) {
+
+            stringstream ss(pojedynczaLiniaWPliku);
+            string IdAdresataWydzieloneZLinii;
+            getline(ss, IdAdresataWydzieloneZLinii, '|');
+
+            if (tymczasowyPlikTekstowy.good() == true) {
+
+                if (IdAdresataWydzieloneZLinii == to_string(idEdytowanegoAdresata)) {
+                    
+                    if (!czyPlikJestPusty(tymczasowyPlikTekstowy) == true)
+                    {
+                        tymczasowyPlikTekstowy << endl;
+                    }
+
+                    tymczasowyPlikTekstowy << idEdytowanegoAdresata  << "|";
+                    tymczasowyPlikTekstowy << idZalogowanegoUzytkownika << "|";
+                    tymczasowyPlikTekstowy << adresat.pobierzImie() << "|";
+                    tymczasowyPlikTekstowy << adresat.pobierzNazwisko() << "|";
+                    tymczasowyPlikTekstowy << adresat.pobierzNumerTelefonu() << "|";
+                    tymczasowyPlikTekstowy << adresat.pobierzEmail() << "|";
+                    tymczasowyPlikTekstowy << adresat.pobierzAdres() << "|";
+                }
+                else {
+                   
+
+                    if (czyPlikJestPusty(tymczasowyPlikTekstowy) == true)
+                    {
+                        tymczasowyPlikTekstowy << pojedynczaLiniaWPliku;
+                    }
+                    else
+                    {
+                        tymczasowyPlikTekstowy << endl << pojedynczaLiniaWPliku;
+                    }
+                    
+                }
+            }
+
+        }
+    }
+    tymczasowyPlikTekstowy.close();
+    plikTekstowy.close();
+
+    if ((remove(nazwaPlikuZAdresatami.c_str()) != 0)) {
+        perror("Blad usuwania bazy danych");
+        return false;
+
+    }
+    else
+
+        if (rename(nazwaTymczasowegoPlikuTekstowego_, nazwaPlikuZAdresatami.c_str()) != 0) {
+            perror("Blad zmiany nazwy pliku bazy danych");
+            return false;
+        }
+
+        else {
+            return true;
+        }
+
+
 }
