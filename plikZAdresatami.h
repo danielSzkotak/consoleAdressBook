@@ -13,7 +13,6 @@ using namespace std;
 
 class PlikZAdresatami
 {
-	//const string nazwaPlikuZAdresatami;
 	const string NAZWA_PLIKU_Z_ADRESATAMI;
 	const string nazwaTymczasowegoPlikuTekstowego; 
 	int idOstatniegoAdresata;
