@@ -13,10 +13,10 @@ using namespace std;
 
 class PlikZAdresatami
 {
-	const string nazwaPlikuZAdresatami;
+	//const string nazwaPlikuZAdresatami;
+	const string NAZWA_PLIKU_Z_ADRESATAMI;
 	const string nazwaTymczasowegoPlikuTekstowego; 
 	int idOstatniegoAdresata;
-
 	bool czyPlikJestPusty(fstream& plikTekstowy);
 	string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
 	string pobierzLiczbe(string tekst, int pozycjaZnaku);
@@ -25,8 +25,8 @@ class PlikZAdresatami
 	int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 
 public:
-	PlikZAdresatami(string NAZWA_PLIKU_Z_ADRESATAMI) 
-		: nazwaPlikuZAdresatami(NAZWA_PLIKU_Z_ADRESATAMI), nazwaTymczasowegoPlikuTekstowego("Adresaci_temp.txt") {
+	PlikZAdresatami(string nazwaPlikuZAdresatami) 
+		: NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami), nazwaTymczasowegoPlikuTekstowego("Adresaci_temp.txt") {
 		idOstatniegoAdresata = 0;
 	};
 

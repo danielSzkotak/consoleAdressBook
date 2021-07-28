@@ -44,7 +44,7 @@ bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat){
     string liniaZDanymiAdresata = "";
     fstream plikTekstowy;
 
-    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::out | ios::app);
+    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::out | ios::app);
 
     if (plikTekstowy.good() == true)
     {
@@ -76,7 +76,7 @@ vector<Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(i
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";
     fstream plikTekstowy;
-    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
+    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
 
     if (plikTekstowy.good() == true)
     {
@@ -183,7 +183,7 @@ bool PlikZAdresatami::usunAdresataZPliku(int idUsuwanegoAdresata) {
     const char* nazwaTymczasowegoPlikuTekstowego_ = nazwaTymczasowegoPlikuTekstowego.c_str();
     string pojedynczaLiniaWPliku="";
 
-    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
+    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
 
     if (plikTekstowy.good() == true)
     {
@@ -216,13 +216,13 @@ bool PlikZAdresatami::usunAdresataZPliku(int idUsuwanegoAdresata) {
     tymczasowyPlikTekstowy.close();
     plikTekstowy.close();
 
-    if ((remove(nazwaPlikuZAdresatami.c_str()) != 0)) {
+    if ((remove(NAZWA_PLIKU_Z_ADRESATAMI.c_str()) != 0)) {
             perror("Blad usuwania bazy danych");
             return false;
 
     } else 
 
-    if (rename(nazwaTymczasowegoPlikuTekstowego_, nazwaPlikuZAdresatami.c_str()) != 0) {
+    if (rename(nazwaTymczasowegoPlikuTekstowego_, NAZWA_PLIKU_Z_ADRESATAMI.c_str()) != 0) {
             perror("Blad zmiany nazwy pliku bazy danych");
             return false;
     }
@@ -241,7 +241,7 @@ bool PlikZAdresatami::edytujDaneAdresataWPliku(int idEdytowanegoAdresata, Adresa
     const char* nazwaTymczasowegoPlikuTekstowego_ = nazwaTymczasowegoPlikuTekstowego.c_str();
     string pojedynczaLiniaWPliku = "";
 
-    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
+    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
 
     if (plikTekstowy.good() == true) {
 
@@ -290,14 +290,14 @@ bool PlikZAdresatami::edytujDaneAdresataWPliku(int idEdytowanegoAdresata, Adresa
     tymczasowyPlikTekstowy.close();
     plikTekstowy.close();
 
-    if ((remove(nazwaPlikuZAdresatami.c_str()) != 0)) {
+    if ((remove(NAZWA_PLIKU_Z_ADRESATAMI.c_str()) != 0)) {
         perror("Blad usuwania bazy danych");
         return false;
 
     }
     else
 
-        if (rename(nazwaTymczasowegoPlikuTekstowego_, nazwaPlikuZAdresatami.c_str()) != 0) {
+        if (rename(nazwaTymczasowegoPlikuTekstowego_, NAZWA_PLIKU_Z_ADRESATAMI.c_str()) != 0) {
             perror("Blad zmiany nazwy pliku bazy danych");
             return false;
         }
