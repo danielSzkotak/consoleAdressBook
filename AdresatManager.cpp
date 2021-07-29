@@ -8,7 +8,6 @@
 
 
 
-
 void AdresatManager::dodajAdresata() {
 
     Adresat adresat;
