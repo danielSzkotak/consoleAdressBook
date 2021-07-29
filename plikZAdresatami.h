@@ -7,13 +7,14 @@
 #include <cstdlib>
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
+#include "PlikTekstowy.h"
 
 
 using namespace std;
 
-class PlikZAdresatami
+class PlikZAdresatami : public PlikTekstowy
 {
-	const string NAZWA_PLIKU_Z_ADRESATAMI;
+	//const string NAZWA_PLIKU_Z_ADRESATAMI;
 	const string nazwaTymczasowegoPlikuTekstowego; 
 	int idOstatniegoAdresata;
 	bool czyPlikJestPusty(fstream& plikTekstowy);
@@ -24,8 +25,8 @@ class PlikZAdresatami
 	int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 
 public:
-	PlikZAdresatami(string nazwaPlikuZAdresatami) 
-		: NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami), nazwaTymczasowegoPlikuTekstowego("Adresaci_temp.txt") {
+	PlikZAdresatami(string nazwaPliku) 
+		: PlikTekstowy(nazwaPliku), nazwaTymczasowegoPlikuTekstowego("Adresaci_temp.txt") {
 		idOstatniegoAdresata = 0;
 	};
 
