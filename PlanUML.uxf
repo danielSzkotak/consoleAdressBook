@@ -53,8 +53,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
-      <y>306</y>
+      <x>423</x>
+      <y>288</y>
       <w>288</w>
       <h>351</h>
     </coordinates>
@@ -82,16 +82,15 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>666</x>
-      <y>306</y>
+      <x>729</x>
+      <y>288</y>
       <w>513</w>
       <h>198</h>
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 --
-- const NAZWA_PLIKU_Z_UZYTKOWNIKAMI: String
+
 --
-- czyPlikJestPusty() : bool
 - zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : String
 - pobierzDaneUzytkownika(): Uzytkownik 
 + PlikZUzytkownikami();
@@ -105,8 +104,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>927</x>
-      <y>72</y>
+      <x>432</x>
+      <y>27</y>
       <w>243</w>
       <h>144</h>
     </coordinates>
@@ -192,6 +191,23 @@
 + pobierzIdOstatniegoAdresata(): Integer
 + usunAdresataZPliku(): bool
 + edytujAdresataWPliku(): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>729</x>
+      <y>36</y>
+      <w>234</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>PlikTekstowy
+-
+- const NAZWA_PLIKU string
+--
++ PlikTekstowy()
++ pobierzNazwePliku()
++ bool czyPlikJestPusty(); </panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

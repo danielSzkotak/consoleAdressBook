@@ -14,7 +14,6 @@ using namespace std;
 
 class PlikZAdresatami : public PlikTekstowy
 {
-	//const string NAZWA_PLIKU_Z_ADRESATAMI;
 	const string nazwaTymczasowegoPlikuTekstowego; 
 	int idOstatniegoAdresata;
 	bool czyPlikJestPusty(fstream& plikTekstowy);
