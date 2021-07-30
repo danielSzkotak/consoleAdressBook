@@ -114,6 +114,7 @@ void AdresatManager::usunAdresata()
 
                         cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                         adresaci.erase(itr);
+                       
                         system("pause");
                         break;
                     }

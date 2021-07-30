@@ -10,8 +10,51 @@
 #include <stdlib.h>
 
 int PlikZAdresatami::pobierzIdOstatniegoAdresata() {
-	return idOstatniegoAdresata;
+	    
+        fstream plikTekstowy;
+        char znak = ' ';
+
+        plikTekstowy.open(pobierzNazwePliku().c_str(), ios::in);
+
+        if (plikTekstowy.good() == true)
+        {
+
+            plikTekstowy.seekg(0, ios::end);
+            if (plikTekstowy.tellg() == 0) {
+                return 0; // if empty file return id = 0;
+            }
+
+            plikTekstowy.seekg(-3, ios_base::end); // set cursor at one char before end of file and get the char
+            plikTekstowy.get(znak);
+
+            while (znak != '\n') {
+                plikTekstowy.seekg(-3, std::ios_base::cur);
+
+                if ((int)(plikTekstowy.tellg()) <= 1) { //if there is only one line in file and you can't find end of line sign         
+                    plikTekstowy.seekg(0);
+                    plikTekstowy.get(znak);
+
+                    return (int)(znak - 48);
+
+                }
+
+                plikTekstowy.get(znak);
+
+            }
+
+            string lastLine="";
+            getline(plikTekstowy, lastLine);
+            plikTekstowy.close();
+
+            return (int)(lastLine[0] - 48);
+
+        }
+        else {
+            return 0; // if the file is created first time
+        }
+    
 }
+
 
 bool PlikZAdresatami::czyPlikJestPusty(fstream& plikTekstowy)
 {
@@ -216,6 +259,8 @@ bool PlikZAdresatami::usunAdresataZPliku(int idUsuwanegoAdresata) {
     tymczasowyPlikTekstowy.close();
     plikTekstowy.close();
 
+    
+
     if ((remove(pobierzNazwePliku().c_str()) != 0)) {
             perror("Blad usuwania bazy danych");
             return false;
@@ -229,6 +274,7 @@ bool PlikZAdresatami::usunAdresataZPliku(int idUsuwanegoAdresata) {
 
     else {
         return true;
+        
     }
 
 
@@ -303,6 +349,7 @@ bool PlikZAdresatami::edytujDaneAdresataWPliku(int idEdytowanegoAdresata, Adresa
         }
 
         else {
+            
             return true;
         }
 

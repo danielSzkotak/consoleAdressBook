@@ -23,7 +23,6 @@ public:
 	void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>& uzytkownicy);
 	vector<Uzytkownik> wczytajUzytkownikowZPliku();
 
-
 };
 
 
