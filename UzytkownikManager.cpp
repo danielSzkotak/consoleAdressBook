@@ -95,8 +95,7 @@ int UzytkownikManager::logowanieUzytkownika() {
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
-                //haslo = MetodyPomocnicze::wczytajLinie();
-                cin >> haslo;
+                haslo = MetodyPomocnicze::wczytajLinie();                
 
                 if (uzytkownicy[i].pobierzHaslo() == haslo)
                 {
